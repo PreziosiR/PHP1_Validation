@@ -36,12 +36,5 @@
 </nav>
 
 <div class="container-fluid">
-
-  <!--<img src="images/Ipad.jpg" alt="photo ipad"/>
-  <p>350€</p>
-  <button type="button" class="btn btn-primary">Ajouter au panier</button>
--->
-<?php
-  addProduct('Ipad','350€','Ipad.jpg','Un Ipad tout neuf');
-?>
+  <?php addProduct('Ipad','350€','Ipad.jpg','Un Ipad tout neuf');?>
 </div>

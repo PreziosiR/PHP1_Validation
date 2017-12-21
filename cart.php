@@ -47,7 +47,7 @@ if (!$erreur){
       Case "refresh" :
          for ($i = 0 ; $i < count($QteArticle) ; $i++)
          {
-            modifyQtProduct($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
+            modifyQtProduct($_SESSION['cart']['title'][$i],round($QteArticle[$i]));
          }
          break;
 
@@ -83,7 +83,7 @@ if (!$erreur){
 				echo "<td>".htmlspecialchars($_SESSION['cart']['title'][$i])."</ td>";
 				echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['cart']['nbProduct'][$i])."\"/></td>";
 				echo "<td>".htmlspecialchars($_SESSION['cart']['price'][$i])."</td>";
-				echo "<td><a href=\"".htmlspecialchars("cart.php?action=suppression&l=".rawurlencode($_SESSION['cart']['title'][$i]))."\">XX</a></td>";
+				echo "<td><a href=\"".htmlspecialchars("cart.php?action=suppression&l=".rawurlencode($_SESSION['cart']['title'][$i]))."\">Supprimer</a></td>";
 				echo "</tr>";
 			}
 
@@ -94,11 +94,15 @@ if (!$erreur){
 
 			echo "<tr><td colspan=\"4\">";
 			echo "<input type=\"submit\" value=\"Rafraichir\"/>";
+      echo "<input type=\"submit\" value=\"Payer\"/>";
 			echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-
 			echo "</td></tr>";
 		}
 	}
 	?>
 </table>
 </form>
+<?php
+echo "<form method='POST' action='index.php'>";
+  echo "<button type='submit' class='btn btn-primary'>Continuer mes achats</button>";
+echo "</form>";

@@ -48,7 +48,7 @@ function addArticleCart($title, $nbProduct, $price)
 function deleteProduct($title)
 {
    //Si le panier existe
-   if (creationPanier())
+   if (createCart())
    {
       //Nous allons passer par un panier temporaire
       $tmp=array();
@@ -92,7 +92,7 @@ function modifyQtProduct($title,$nbProduct)
          }
       }
       else
-      supprimerArticle($title);
+      deleteProduct($title);
    }
    else
    echo "Un problème est survenu veuillez contacter l'administrateur du site.";
@@ -106,4 +106,9 @@ function CountCart()
       $total += $_SESSION['cart']['nbProduct'][$i] * $_SESSION['cart']['price'][$i];
    }
    return $total;
+}
+
+function supprimePanier()
+{
+   unset($_SESSION['panier']);
 }

@@ -28,27 +28,31 @@
     </form>
   </div>
 </nav>
-
+<!--la liste des produits du site -->
 <div class="container-fluid">
   <div class="row">
     <div class="col">
       <?php addProduct('Ipad','350€','Ipad.jpg','Un Ipad tout neuf');?>
+      <a href="cart.php?action=ajout&amp;l=Ipad&amp;q=1&amp;p=350" onclick="window.open(this.href, '',
+      'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
     </div>
     <div class="col">
       <?php addProduct('GoPro','500€','Gopro.jpg','magnifique gopro');?>
+      <a href="cart.php?action=ajout&amp;l=Gopro&amp;q=1&amp;p=500" onclick="window.open(this.href, '',
+      'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
     </div>
     <div class="col">
       <?php addProduct('PC portable','800€','PC-Portable.jpg','un PC');?>
+      <a href="cart.php?action=ajout&amp;l=PC portable lenovo&amp;q=1&amp;p=800" onclick="window.open(this.href, '',
+      'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
     </div>
   </div>
-  <div class="row">
-      <div class="col">
-        <a href="cart.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT" onclick="window.open(this.href, '',
-        'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
-      </div>
-  </div>
+  <?php
+    require_once('templates/formAddProduct.php');
+   ?>
 
-  <form method="POST" action="login/deconnect.php">
-      <button type="submit" class="btn btn-outline-danger waves-effect" style="float: right;">Se deconnecter</button>
-  </form>
+   <form method="POST" action="login/deconnect.php">
+       <button type="submit" class="btn btn-outline-danger waves-effect" style:"display:block; margin:auto">Se deconnecter</button>
+   </form>
+
 </div>

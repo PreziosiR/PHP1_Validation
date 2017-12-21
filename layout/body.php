@@ -47,6 +47,7 @@
       'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
     </div>
   </div>
+</br>
   <?php
     require_once('templates/formAddProduct.php');
    ?>

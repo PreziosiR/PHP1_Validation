@@ -10,9 +10,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">ACCUEIL <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Catégorie
@@ -24,9 +21,6 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -36,5 +30,25 @@
 </nav>
 
 <div class="container-fluid">
-  <?php addProduct('Ipad','350€','Ipad.jpg','Un Ipad tout neuf');?>
+  <div class="row">
+    <div class="col">
+      <?php addProduct('Ipad','350€','Ipad.jpg','Un Ipad tout neuf');?>
+    </div>
+    <div class="col">
+      <?php addProduct('GoPro','500€','Gopro.jpg','magnifique gopro');?>
+    </div>
+    <div class="col">
+      <?php addProduct('PC portable','800€','PC-Portable.jpg','un PC');?>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <a href="cart.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT" onclick="window.open(this.href, '',
+        'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">Ajouter au panier</a>
+      </div>
+  </div>
+
+  <form method="POST" action="login/deconnect.php">
+      <button type="submit" class="btn btn-outline-danger waves-effect" style="float: right;">Se deconnecter</button>
+  </form>
 </div>
